@@ -1,0 +1,92 @@
+{% extends "recipes/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Recipes:</h1>
+{% for recipe in recipes %}
+<div class="card my-4">
+    <div class="card-body">
+        <h5 class="card-title">{{ recipe.title }} </h5>
+        <h6 class="card-subtitle mb-2 text-muted"> {{ recipe.author }}</h6>
+        <p class="card-text">{{ recipe.description }}</p>
+        <h6 class="card-subtitle mb-2 text-muted">{{ recipe.updated_at|date:"F d, Y"}}</h6>
+        <a href="{$ url 'recipes-detail' recipe.pk %}" class="card-link">View Recipe</a>
+    </div>
+</div>
+{% endfor %}
+
+<!-- Chef's Special Video-->
+<div class="card my-4">
+    <div class="card-body text-center">
+        <h5 class="card-title">Chef's Special Video</h5>
+        <video width="650" height="400" controls>
+            <img src="djangoscenario\static\ChefsVideo.mp4" alt="Chef's Video" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<!-- Testimonial 3 - Bootstrap Brain Component -->
+<section class="bg-light py-5 py-xl-8">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+          <h2 class="fs-6 text-secondary mb-2 text-uppercase text-center">Community Feedback</h2>
+          <p class="display-5 mb-4 mb-md-5 text-center"></p>
+          <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+        </div>
+      </div>
+    </div>
+  
+    <div class="container overflow-hidden">
+      <div class="row gy-4 gy-md-0 gx-xxl-5">
+        <div class="col-12 col-md-4">
+          <div class="card border-0 border-bottom border-primary shadow-sm">
+            <div class="card-body p-4 p-xxl-5">
+              <figure>
+                <img class="img-fluid rounded rounded-circle mb-4 border border-5" loading="lazy" src="" alt="">
+                <figcaption>
+                  <div class="bsb-ratings text-warning mb-3" data-bsb-star="5" data-bsb-star-off="0"></div>
+                  <blockquote class="bsb-blockquote-icon mb-4">Banging website</blockquote>
+                  <h4 class="mb-2">Luna John</h4>
+                  <h5 class="fs-6 text-secondary mb-0">Baker</h5>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card border-0 border-bottom border-primary shadow-sm">
+            <div class="card-body p-4 p-xxl-5">
+              <figure>
+                <img class="img-fluid rounded rounded-circle mb-4 border border-5" loading="lazy" src="" alt="">
+                <figcaption>
+                  <div class="bsb-ratings text-warning mb-3" data-bsb-star="4" data-bsb-star-off="1"></div>
+                  <blockquote class="bsb-blockquote-icon mb-4">Terrible</blockquote>
+                  <h4 class="mb-2">Gordon Ramsay</h4>
+                  <h5 class="fs-6 text-secondary mb-0">Michelin Star Chef</h5>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card border-0 border-bottom border-primary shadow-sm">
+            <div class="card-body p-4 p-xxl-5">
+              <figure>
+                <img class="img-fluid rounded rounded-circle mb-4 border border-5" loading="lazy" src="" alt="">
+                <figcaption>
+                  <div class="bsb-ratings text-warning mb-3" data-bsb-star="5" data-bsb-star-off="0"></div>
+                  <blockquote class="bsb-blockquote-icon mb-4">Person's feedback</blockquote>
+                  <h4 class="mb-2">Luke Reeves</h4>
+                  <h5 class="fs-6 text-secondary mb-0">Cooking Hobbyist</h5>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock content %}

@@ -1,0 +1,1 @@
+All dependincies needed to run the project on someone elses computer
