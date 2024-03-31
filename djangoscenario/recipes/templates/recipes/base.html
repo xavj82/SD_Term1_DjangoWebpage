@@ -26,9 +26,9 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{% url 'recipes-home' %}">Home</a>
               <a class="dropdown-item" href="{% url 'recipes-create' %}">Add Recipes</a>
-              <a class="dropdown-item" href="#">Breakfast</a>
-              <a class="dropdown-item" href="#">Lunch</a>
-              <a class="dropdown-item" href="#">Dinner</a>
+              <a class="dropdown-item" href="{% url 'recipes-recipes' meal_id=1 %}">Breakfast</a>
+              <a class="dropdown-item" href="{% url 'recipes-recipes' meal_id=2 %}">Lunch</a>
+              <a class="dropdown-item" href="{% url 'recipes-recipes' meal_id=3 %}">Dinner</a>
             </div>
           </li>
           <li class="nav-item dropdown">
