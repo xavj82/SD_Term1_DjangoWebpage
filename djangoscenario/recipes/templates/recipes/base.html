@@ -16,13 +16,13 @@
     {% load static %}
     <img src="djangoscenario\static\images\logo.png" alt="logo" width="75" height="75"/>
     <a class="navbar-brand" href="#">ChefHub</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes</a>
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{% url 'recipes-home' %}">Home</a>
               <a class="dropdown-item" href="{% url 'recipes-create' %}">Add Recipes</a>
@@ -139,8 +139,8 @@
 <!-- Footer -->
 
  <!-- Bootstrap Bundle with Popper (JavaScript) -->
- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
  <!-- It's crucial to include the JS bundle for dropdowns and other interactive components to function -->
 </body>
 </html>
