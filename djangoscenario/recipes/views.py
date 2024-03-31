@@ -1,5 +1,5 @@
 from django.forms import BaseModelForm
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from . import models
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -60,4 +60,16 @@ class NavbarRecipe(ListView):
         context['meals'] = self.get_names()
         return context
 
+def meal_display(request, meal_id):
+    meal = get_object_or_404(models.MealType, pk=meal_id)
+    meals_in_category = models.Recipe.objects.filter(meal_type=meal)
+
+    context = {
+        'meal': meal,
+        'meal_type': meals_in_category,
+    }
+
+    return render(request, 'recipes/recipes.html', context)
+
+    
 
