@@ -33,6 +33,13 @@ class Recipe(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    ingredients = models.TextField(null=True)
+    method = models.TextField(null=True)
+
+    meal_type = models.ForeignKey(MealType, on_delete=models.CASCADE, null=True)
+    meal_diet = models.ManyToManyField(MealDiet, help_text="Hold ctrl or cmd to select more than one option")
+    meal_holiday = models.ManyToManyField(HolidayMeal, help_text="Hold ctrl or cmd to select more than one option")
+
     def get_absolute_url(self):
         return reverse("recipes-detail", kwargs={"pk": self.pk})
 
