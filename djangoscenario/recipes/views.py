@@ -46,5 +46,18 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+class NavbarRecipe(ListView):
+    model = models.MealType
+    template_name = 'recipes/base.html'
+    context_object_name = 'mealtype'
+
+    def get_names(self):
+        return list(self.get_queryset().values_list('meal', flat=True))
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['meals'] = self.get_names()
+        return context
 
 
