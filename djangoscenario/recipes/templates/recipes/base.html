@@ -58,12 +58,17 @@
 
         </ul>
           <ul class="navbar-nav ms-auto">
+            {% if user.is_authenticated %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Register</a>
-                <a class="dropdown-item" href="#">Login</a>
+                <a class="dropdown-item" href="">My Profile</a>
                 <a class="dropdown-item" href="#">Logout</a>
+                {% else %}
+                <a class="dropdown-item" href="">Register</a>
+                <a class="dropdown-item" href="">Login</a>
+                {% endif %}
+                
               </div>
             </li>
           </ul>
